@@ -99,5 +99,12 @@ Actions
 Move - Move the unit in one of 5 directions, North, East, South, West, Center.
 Transfer - Send any amount of a single resource-type from a unit's cargo to another (start-of-turn) adjacent Unit, up to the latter's cargo capacity. Excess is returned to the original unit.
 
+### Cooldown
+
+CityTiles, Workers and Carts all have a cooldown mechanic after each action. Units and CityTiles can only perform an action when they have < 1 Cooldown.
+
+At the end of each turn, after Road have been built and pillaged, each unit's Cooldown decreases by 1 and further decreases by the level of the Road the unit is on at the end of the turn. CityTiles are not affected by road levels and cooldown always decreases by 1. The minimum Cooldown is 0.
+
+After an action is performed, the unit’s Cooldown will increase by a Base Cooldown.
 
 
