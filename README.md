@@ -9,7 +9,7 @@ The purpose of this repository is to discuss open source algorithms which can be
 
 The night is dark and full of terrors. Two teams must fight off the darkness, collect resources, and advance through the ages. Daytime finds a desperate rush to gather the resources that can carry you through the impending night whilst growing your city. Plan and expand carefully -- any city that fails to produce enough light will be consumed by darkness.
 
-## Welcome to the Lux AI Challenge Season 1!
+### Welcome to the Lux AI Challenge Season 1!
 
 The Lux AI Challenge is a competition where competitors design agents to tackle a multi-variable optimization, resource gathering, and allocation problem in a 1v1 scenario against other competitors. In addition to optimization, successful agents must be capable of analyzing their opponents and developing appropriate policies to get the upper hand.
 
@@ -30,3 +30,15 @@ In the Lux AI Challenge Season 1, two competing teams control a team of Units an
 Each competitor must program their own agent in their language of choice. Each turn, your agent gets 3 seconds to submit their actions, excess time is not saved across turns. In each game, you are given a pool of 60 seconds that is tapped into each time you go over a turn's 3-second limit. Upon using up all 60 seconds and going over the 3-second limit, your agent freezes and can no longer submit additional actions.
 
 The rest of the document will go through the key features of this game.
+
+### The Map
+
+The world of Lux is represented as a 2d grid. Coordinates increase east (right) and south (down). The map is always a square and can be 12, 16, 24, or 32 tiles long. The (0, 0) coordinate is at the top left.
+
+![image](https://user-images.githubusercontent.com/11299574/138728346-eff2fc85-c7b1-47c5-9973-8ebd4f6ad944.png)
+
+The map has various features including Resources (Wood, Coal, Uranium), Units (Workers, Carts), CityTiles, and Road.
+
+In order to prevent maps from favoring one player over another, it is guaranteed that maps are always symmetric by vertical or horizontal reflection.
+
+Each player will start with a single CityTile and a single worker on that CityTile
