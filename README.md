@@ -74,3 +74,15 @@ Actions
 * Build Cart - Build Carts unit on top of this CityTile (cannot build a cart if the current number of owned workers + carts equals the number of owned CityTiles)
 * Research - Increase your team’s Research Points by 1
 
+### Units
+There are two unit types, Workers, and Carts. Every unit can perform a single action once they have a Cooldown < 1.
+
+All units can choose the move action and move in any of 5 directions, North, East, South, West, Center. Moreover, all units can carry raw resources gained from automatic mining or resource transfer. Workers are capped at 100 units of resources and Carts are capped at 2000 units of resources.
+
+Whenever a unit moves on top of a friendly CityTile, the City that CityTile forms converts all carried resources into fuel.
+
+There can be at most one unit on tiles without a CityTile. Moreover, units cannot move on top of the opposing team’s CityTiles. However, units can stack on top of each other on a friendly CityTile.
+
+If two units attempt to move to the same tile that is not a CityTile, this is considered a collision, and the move action is canceled.
+
+
