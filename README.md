@@ -120,4 +120,44 @@ Roads can also be destroyed by Workers via the pillage action which reduces road
 
 If a City is consumed by darkness, the road level of all tiles in the City's CityTiles will go back to 0.
 
+### Day/Night Cycle
 
+The Day/Night cycle consists of a 40 turn cycle, the first 30 turns being day turns, the last 10 being night turns. There are a total of 360 turns in a match, forming 9 cycles.
+
+During the night, Units and Cities need to produce light to survive. Each turn of night, each Unit and CityTile will consume an amount of fuel, see table below for rates. Units in particular will use their carried resources to produce light whereas CityTiles will use their fuel to produce light.
+
+Workers and Carts will only need to consume resources if they are not on a CityTile. When outside the City, Workers and Carts must consume whole units of resources to satisfy their night needs, e.g. if a worker carries 1 wood and 5 uranium on them, they will consume a full wood for 1 fuel, then a full unit of uranium to fulfill the last 3 fuel requirements, wasting 37 fuel. Units will always consume the least efficient resources first.
+
+Lastly, at night, Units gain 2x more Base Cooldown
+
+Should any Unit during the night run out of fuel, they will be removed from the game and disappear into the night forever. Should a City run out of fuel, however, the entire City with all of the CityTiles it owns will fall into darkness and be removed from the game.
+
+![image](https://user-images.githubusercontent.com/11299574/138730573-a00e7380-0ec4-40d9-88a7-a001d5839767.png)
+
+### Game Resolution order
+
+To help avoid confusion over smaller details of how each turn is resolved, we provide the game resolution order here and how actions are applied.
+
+Actions in the game are first all validated against the current game state to see if they are valid. Then the actions, along with game events, are resolved in the following order and simultaneously within each step
+
+CityTile actions along with increased cooldown
+Unit actions along with increased cooldown
+Roads are created
+Resource collection
+Resource drops on CityTiles
+If night time, make Units consume resources and CityTiles consume fuel
+Regrow wood tiles that are not depleted to 0
+Cooldowns are handled / computed for each unit and CityTile
+The only exception to the validation criteria is that units may move smoothly between spaces, meaning if two units are adjacent, they can swap places in one turn.
+
+Otherwise, actions such as one unit building a CityTile, then another unit moving on top of the new CityTile, are not allowed as the current state does not have this newly built city and units cannot move on top of other units outside of CityTiles.
+
+
+### Win Conditions
+
+After 360 turns the winner is whichever team has the most CityTiles on the map. If that is a tie, then whichever team has the most units owned on the board wins. If still a tie, the game is marked as a tie.
+
+A game may end early if a team no longer has any more Units or CityTiles. Then the other team wins.
+
+Note on Game Rule Changes will be visible on https://www.kaggle.com/c/lux-ai-2021/rules 
+(This is also in the competition rules) 
