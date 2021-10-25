@@ -65,3 +65,12 @@ Workers cannot mine while on CityTiles. Instead, if there is at least one Worker
 
 Units and CityTiles can perform actions each turn given certain conditions. In general, all actions are simultaneously applied and are validated against the state of the game at the start of a turn. The next few sections describe the Units and CityTiles in detail.
 
+### CityTiles
+A CityTile is a building that takes up one tile of space. Adjacent CityTiles collectively form a City. Each CityTile can perform a single action provided the CityTile has a Cooldown < 1.
+
+Actions
+
+* Build Worker - Build Worker unit on top of this CityTile (cannot build a worker if the current number of owned workers + carts equals the number of owned CityTiles)
+* Build Cart - Build Carts unit on top of this CityTile (cannot build a cart if the current number of owned workers + carts equals the number of owned CityTiles)
+* Research - Increase your team’s Research Points by 1
+
