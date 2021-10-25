@@ -42,3 +42,14 @@ The map has various features including Resources (Wood, Coal, Uranium), Units (W
 In order to prevent maps from favoring one player over another, it is guaranteed that maps are always symmetric by vertical or horizontal reflection.
 
 Each player will start with a single CityTile and a single worker on that CityTile
+
+
+### Resources
+
+There are 3 kinds of resources: Wood, Coal, and Uranium (in order of increasing fuel efficiency). These resources are collected by workers, then dropped off once a worker moves on top of a CityTile to then be converted into fuel for the city. Some resources require research points before they are possible to collect.
+
+Wood in particular can regrow. Each turn, every wood tile's wood amount increases by 2.5% of its current wood amount rounded up. Wood tiles that have been depleted will not regrow. Only wood tiles with less than 500 wood will regrow.
+
+![image](https://user-images.githubusercontent.com/11299574/138728524-6a9c1668-3b7f-4c0b-afb9-a93d250a8478.png)
+
+
