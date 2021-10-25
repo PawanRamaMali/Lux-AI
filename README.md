@@ -107,4 +107,17 @@ At the end of each turn, after Road have been built and pillaged, each unit's Co
 
 After an action is performed, the unit’s Cooldown will increase by a Base Cooldown.
 
+![image](https://user-images.githubusercontent.com/11299574/138730448-e4728847-c437-4ccd-90ad-70df00570d49.png)
+
+
+### Roads
+
+As Carts travel across the map, they start to create roads that allow all Units to move faster (see Cooldown). At the end of each turn, Cart will upgrade the road level of the tile it ends on by 0.75. The higher the road level, the faster Units can move and perform actions. All tiles start with a road level of 0 and are capped at 6.
+
+Moreover, CityTiles automatically have the max road level of 6.
+
+Roads can also be destroyed by Workers via the pillage action which reduces road level by 0.5 each time.
+
+If a City is consumed by darkness, the road level of all tiles in the City's CityTiles will go back to 0.
+
 
