@@ -85,4 +85,12 @@ There can be at most one unit on tiles without a CityTile. Moreover, units canno
 
 If two units attempt to move to the same tile that is not a CityTile, this is considered a collision, and the move action is canceled.
 
+### Workers
+Actions
+
+Move - Move the unit in one of 5 directions, North, East, South, West, Center.
+Pillage - Reduce the Road level of the tile the unit is on by 0.5
+Transfer - Send any amount of a single resource-type from a unit's cargo to another (start-of-turn) adjacent Unit, up to the latter's cargo capacity. Excess is returned to the original unit.
+Build CityTile - Build a CityTile right under this worker provided the worker has 100 total resources of any type in their cargo (full cargo) and the tile is empty. If building is successful, all carried resources are consumed and a new CityTile is built with 0 starting resources.
+
 
